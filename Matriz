@@ -90,7 +90,7 @@ string jugada2Posicion(){
 bool espacioVacio(string pieza){
 	if(pieza=="a1"){
 		if(vec1[1]==" ■ "||vec1[1]==" □"){
-			return false;
+			return false;}
 
 //vectores
 	vector<string> vec0{"0  ","1 ","2 ","3 ","4"};
