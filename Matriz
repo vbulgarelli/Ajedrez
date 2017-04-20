@@ -169,13 +169,94 @@ bool espacioVacio2(string pieza){
 			return false;}
 		else{return true;}}
 	
+bool espacioVacio1(string pieza){
+	if(pieza=="a1";){
+		if(vec1[1]==" ■ "||vec1[1]==" □"||vec1[1]=="♜ "||vec1[1]=="♚ "||vec1[1]=="♛ "||vec1[1]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="a2";){
+		if(vec1[2]==" ■ "||vec1[2]==" □"||vec1[2]=="♜ "||vec1[2]=="♚ "||vec1[2]=="♛ "||vec1[2]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="a3";){
+		if(vec1[3]==" ■ "||vec1[3]==" □"||vec1[3]=="♜ "||vec1[3]=="♚ "||vec1[3]=="♛ "||vec1[3]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="a4";){
+		if(vec1[4]==" ■ "||vec1[4]==" □"||vec1[4]=="♜ "||vec1[4]=="♚ "||vec1[4]=="♛ "||vec1[4]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="b1";){
+		if(vec2[1]==" ■ "||vec2[1]==" □"||vec2[1]=="♜ "||vec2[1]=="♚ "||vec2[1]=="♛ "||vec2[1]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="b2";){
+		if(vec2[2]==" ■ "||vec2[2]==" □"||vec2[2]=="♜ "||vec2[2]=="♚ "||vec2[2]=="♛ "||vec2[2]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="b3";){
+		if(vec2[3]==" ■ "||vec2[3]==" □"||vec2[3]=="♜ "||vec2[3]=="♚ "||vec2[3]=="♛ "||vec2[3]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="b4";){
+		if(vec2[4]==" ■ "||vec2[4]==" □"||vec2[4]=="♜ "||vec2[4]=="♚ "||vec2[4]=="♛ "||vec2[4]=="♟ "){
+			return false;}
+		else{return true;}
+	if(pieza=="c1";){
+		if(vec3[1]==" ■ "||vec3[1]==" □"||vec3[1]=="♜ "||vec3[1]=="♚ "||vec3[1]=="♛ "||vec3[1]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="c2";){
+		if(vec3[2]==" ■ "||vec3[2]==" □"||vec3[2]=="♜ "||vec3[2]=="♚ "||vec3[2]=="♛ "||vec3[2]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="c3";){
+		if(vec4[3]==" ■ "||vec3[3]==" □"||vec3[3]=="♜ "||vec3[3]=="♚ "||vec3[3]=="♛ "||vec3[3]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="c4";){
+		if(vec3[4]==" ■ "||vec3[4]==" □"||vec3[4]=="♜ "||vec3[4]=="♚ "||vec3[4]=="♛ "||vec3[4]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="d1";){
+		if(vec4[1]==" ■ "||vec4[1]==" □"||vec4[1]=="♜ "||vec4[1]=="♚ "||vec4[1]=="♛ "||vec4[1]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="d2";){
+		if(vec4[2]==" ■ "||vec4[2]==" □"||vec4[2]=="♜ "||vec4[2]=="♚ "||vec4[2]=="♛ "||vec4[2]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="d3";){
+		if(vec4[3]==" ■ "||vec4[3]==" □"||vec4[3]=="♜ "||vec4[3]=="♚ "||vec4[3]=="♛ "||vec4[3]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="d4";){
+		if(vec4[4]==" ■ "||vec4[4]==" □"||vec4[4]=="♜ "||vec4[4]=="♚ "||vec4[4]=="♛ "||vec4[4]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="e1";){
+		if(vec5[1]==" ■ "||vec5[1]==" □"||vec5[1]=="♜ "||vec5[1]=="♚ "||vec5[1]=="♛ "||vec5[1]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="e2";){
+		if(vec5[2]==" ■ "||vec5[2]==" □"||vec5[2]=="♜ "||vec5[2]=="♚ "||vec5[2]=="♛ "||vec5[2]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="e3";){
+		if(vec5[3]==" ■ "||vec5[3]==" □"||vec5[3]=="♜ "||vec5[3]=="♚ "||vec5[3]=="♛ "||vec5[3]=="♟ "){
+			return false;}
+		else{return true;}}
+	if(pieza=="e4";){
+		if(vec5[4]==" ■ "||vec5[4]==" □"||vec5[4]=="♜ "||vec5[4]=="♚ "||vec5[4]=="♛ "||vec5[4]=="♟ "){
+			return false;}
+		else{return true;}}
 
 //vectores
 	vector<string> vec0{"0  ","1 ","2 ","3 ","4"};
 	vector<string> vec1{"a  ","♖ ","♔ ","♕ ","♖ "};
 	vector<string> vec2{"b  ","♙ ","♙ ","♙ ","♙ "};
 	vector<string> vec3{"c  "," ■ "," □"," ■ "," □"};
-	vector<string> vec4{"d  ","♟ ","♟ ","♟ ","♟"};
+	vector<string> vec4{"d  ","♟ ","♟ ","♟ ","♟ "};
 	vector<string> vec5{"e  ","♜ ","♛ ","♚ ","♜ "};
 
 int main(){
