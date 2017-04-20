@@ -58,8 +58,9 @@ string jugada1Posicion(){
 			return pos;}
 		else{
 			cout<<"Movimiento no valido, escriba comer si desea comer otra pieza y mover si desea mover la pieza"<<endl;
-			return error;}
+			return error;}}
 	}
+	
 string jugada2Pieza(){
 	string pieza;
 	cout<<"Jugador 2(Negro): "<<endl;
@@ -83,17 +84,24 @@ string jugada2Posicion(){
 			return pos;}
 		else{
 			cout<<"Movimiento no valido, escriba comer si desea comer otra pieza y mover si desea mover la pieza"<<endl;
-			return error;}
+			return error;}}
+	}
+
+bool espacioVacio(string pieza){
+	if(pieza=="a1"){
+		if(vec1[1]==" ■ "||vec1[1]==" □"){
+			return false;
 
 //vectores
 	vector<string> vec0{"0  ","1 ","2 ","3 ","4"};
 	vector<string> vec1{"a  ","♖ ","♔ ","♕ ","♖"};
 	vector<string> vec2{"b  ","♙ ","♙ ","♙ ","♙"};
-	vector<string> vec3{"c  "," ■ "," □ "," ■ ","□"};
+	vector<string> vec3{"c  "," ■ "," □"," ■ "," □"};
 	vector<string> vec4{"d  ","♟ ","♟ ","♟ ","♟"};
 	vector<string> vec5{"e  ","♜ ","♛ ","♚ ","♜"};
 
 int main(){
+	bool cond;
 	string pBlanca,pNegra,jBlanca,jNegra;
 	vector<string>::iterator itr;
 	
@@ -108,6 +116,9 @@ int main(){
 	jNegra=jugada2Posicion();
 	while(jNegra=="error"){
 		jNegra=jugada2Posicion();}
+		
+	if(pBlanca=="a1"){
+		cond=espacioVacio(pBlanca);
 	
 	
 	
