@@ -1,0 +1,291 @@
+#include <iostream>
+using namespace std;
+
+class Ficha {
+	protected:
+		bool color;
+		char letra;
+	public:
+		Ficha(bool pColor,char pLetra){
+			color=pColor;
+			letra=pLetra;
+		}
+		virtual void movimiento()=0;
+		virtual void comer()=0;
+		bool getColor(){
+			return color;
+		}
+		void setColor(bool pColor){
+			color=pColor;
+		}
+		char getLetra(){
+			return letra;
+		}
+		void setLetra(char pLetra){
+			letra=pLetra;
+		}
+};
+
+class Peon:public virtual Ficha{
+	public:
+		Peon(bool pColor,char pLetra):Ficha(pColor,pLetra){
+		}
+		virtual void movimiento(){cout<<"Hola"<<endl;
+		}
+		virtual void comer(){cout<<"Falta procedimiento"<<endl;
+		}	
+};
+
+
+class Rey:public virtual Ficha{
+	public:
+		Rey(bool pColor,char pLetra):Ficha(pColor,pLetra){
+		}
+		virtual void movimiento(){cout<<"420"<<endl;
+		}
+		virtual void comer(){cout<<"Falta procedimiento"<<endl;
+		}
+			
+};
+
+class Reina:public virtual Ficha{
+	public:
+		Reina(bool pColor,char pLetra):Ficha(pColor,pLetra){
+		}
+		virtual void movimiento(){cout<<"4210"<<endl;
+		}
+		virtual void comer(){cout<<"Falta procedimiento"<<endl;
+		}
+		
+			
+};
+
+class Torre:public virtual Ficha{
+	public:
+		Torre(bool pColor,char pLetra):Ficha(pColor,pLetra){
+		}
+		virtual void movimiento(){cout<<"220"<<endl;
+		}
+		virtual void comer(){cout<<"Falta procedimiento"<<endl;
+		}	
+};
+
+char cuadroN=0xFE;
+char cuadroB=' ';
+
+class Tablero {
+	private:
+		Ficha* tablero[5][4];
+		void inicializar(){
+			for(int i=0;i<4;i++){
+				tablero[1][i]=new Peon(false,'P');
+				tablero[3][i]=new Peon(true,'p');
+				
+			}
+			tablero[0][0]=new Torre(false,'R');
+			tablero[0][1]=new Rey(false,'K');
+			tablero[0][2]=new Reina(false,'Q');
+			tablero[0][3]=new Torre(false,'R');
+			tablero[4][0]=new Torre(true,'r');
+			tablero[4][1]=new Rey(true,'k');
+			tablero[4][2]=new Reina(true,'q');
+			tablero[4][3]=new Torre(true,'r');
+		}
+		string pos1,mov1,pos2,mov2;
+		
+	public:
+		Tablero(){
+			for(int i=0;i<5;i++){
+				for(int j=0;j<4;j++){
+					tablero[i][j]=0;
+				}
+			}
+			inicializar();	
+		}
+		
+		string jugada1(){
+			string mov;int i,j;char pieza; string e="error";
+			cout<<"Jugador 1:"<<endl;
+			cout<<"Indique la posición de la pieza que quiere mover: "<<endl;
+			cin>>i;
+			cin>>j;
+			cout<<"Indique si desea mover la pieza o comer: "<<endl;
+			cin>>mov;
+			if(mov=="mover"){
+				pieza=tablero[i][j]->getLetra();
+				if(tablero[i][j]->getColor()==false){
+					cout<<"Movimiento no válido"<<endl;
+					return e;
+				}
+				if(pieza=='p'){
+					tablero[i][j]->movimiento();
+				}
+				else{
+					if(pieza=='r'){
+						tablero[i][j]->movimiento();
+					}
+					else{
+						if(pieza=='k'){
+							tablero[i][j]->movimiento();
+						}
+						else{
+							if(pieza=='q'){
+								tablero[i][j]->movimiento();
+							}
+							else{
+								cout<<"Movimiento no valido"<<endl;
+								return e;
+							}
+						}
+						}
+						}
+					}
+					else{
+						if(mov=="comer"){
+							pieza=tablero[i][j]->getLetra();
+				if(pieza=='p'){
+					tablero[i][j]->comer();
+				}
+				else{
+					if(pieza=='r'){
+						tablero[i][j]->comer();
+					}
+					else{
+						if(pieza=='k'){
+							tablero[i][j]->comer();
+						}
+						else{
+							if(pieza=='q'){
+								tablero[i][j]->comer();
+							}
+							else{
+								cout<<"Movimiento no valido"<<endl;
+								return e;
+							}
+						}
+						}
+						}
+						}
+						else{
+							cout<<"Movimiento no válido"<<endl;
+							return e;
+						}
+					}
+				}
+		string jugada2(){
+			string mov;int i,j;char pieza; string e="error";
+			cout<<"Jugador 2: "<<endl;
+			cout<<"Indique la posición de la pieza que quiere mover: "<<endl;
+			cin>>i;
+			cin>>j;
+			cout<<"Indique si desea mover la pieza o comer: "<<endl;
+			cin>>mov;
+			if(mov=="mover"){
+				pieza=tablero[i][j]->getLetra();
+				if(tablero[i][j]->getColor()==true){
+					cout<<"Movimiento no válido"<<endl;
+					return e;
+				}
+				if(pieza=='P'){
+					tablero[i][j]->movimiento();
+				}
+				else{
+					if(pieza=='R'){
+						tablero[i][j]->movimiento();
+					}
+					else{
+						if(pieza=='K'){
+							tablero[i][j]->movimiento();
+						}
+						else{
+							if(pieza=='Q'){
+								tablero[i][j]->movimiento();
+							}
+							else{
+								cout<<"Movimiento no valido"<<endl;
+								return e;
+							}
+						}
+						}
+						}
+					}
+					else{
+						if(mov=="comer"){
+							pieza=tablero[i][j]->getLetra();
+						if(pieza=='P'){
+							tablero[i][j]->comer();
+						}
+						else{
+							if(pieza=='R'){
+								tablero[i][j]->comer();
+							}
+							else{
+								if(pieza=='K'){
+									tablero[i][j]->comer();
+								}
+								else{
+									if(pieza=='Q'){
+										tablero[i][j]->comer();
+									}
+									else{
+										cout<<"Movimiento no valido"<<endl;
+										return e;
+									}
+								}
+							}
+						}
+						}
+						else{
+							cout<<"Movimiento no válido"<<endl;
+							return e;
+						}
+					}
+				}
+		
+		
+		
+		void imprimir(){
+			for(int i=0;i<5;i++){
+				cout<<endl;
+				for(int j=0;j<4;j++){
+					if(tablero[i][j]==0){
+						if(i%2==0){
+							if(j%2==0){
+								cout<<cuadroB;
+							}
+							else{
+								cout<<cuadroN;
+							}	
+						}
+						else{
+							if(j%2!=0){
+								cout<<cuadroB;
+							}
+							else{
+								cout<<cuadroN;
+							}
+						}
+					}
+					else{
+						cout<<tablero[i][j]->getLetra();
+					}   
+				}
+			}
+			cout<<endl;	
+		}	
+};
+
+int main(){
+	string e="error";
+	Tablero* x=new Tablero();
+	x->imprimir();
+	e=x->jugada1();
+	while(e=="error"){
+		e=x->jugada1();
+	}
+	e="error";
+	e=x->jugada2();
+	while(e=="error"){
+		e=x->jugada2();
+	}
+}
